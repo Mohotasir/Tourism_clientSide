@@ -28,7 +28,8 @@ const router = createBrowserRouter([
     children:[
         {
           path:"/",
-          element: <FrontPage></FrontPage>
+          element: <FrontPage></FrontPage>,
+          loader:()=>fetch('http://localhost:5000/spots')
         },
         {
           path:"/",
