@@ -17,6 +17,8 @@ import Register from './Components/Form/Register.jsx';
 import MyList from './Components/MyList/MyList.jsx';
 import AddSpot from './Components/AddTouristSpot/AddSpot.jsx';
 import PrivateRoute from './Components/privateRoute/PrivateRoute.jsx';
+import Spots from './Components/showspots/Spots.jsx';
+import FrontPage from './Components/Common/FrontPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,7 +28,11 @@ const router = createBrowserRouter([
     children:[
         {
           path:"/",
-          element: <Home></Home>
+          element: <FrontPage></FrontPage>
+        },
+        {
+          path:"/",
+          element: <Spots></Spots>
         },
         {
           path:"/login",

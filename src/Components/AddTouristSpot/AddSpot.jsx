@@ -1,12 +1,9 @@
-
-
+import swal from 'sweetalert';
 const AddSpot = () => {
-
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
-        const img = form.name.value;
+        const img = form.image.value;
         const spotName = form.tourists_spot_name.value;
         const country_name = form.country_name.value;
         const location = form.location.value;
@@ -19,6 +16,23 @@ const AddSpot = () => {
         const email = form.email.value;
         const formData = {img,spotName,country_name,location,sd,ac,seasonality,tt,vr,name,email}
         console.log(formData);
+        fetch("http://localhost:5000/spots",{
+            method: 'POST',
+            headers: {
+              'content-type':'application/json'
+            },
+            body: JSON.stringify(formData)
+          })
+          .then(res=> res.json())
+          .then(data =>{
+            console.log(data)
+            if(data.insertedId){
+                swal(
+                    "Data added successfully !"
+                  )
+            }
+            form.reset();
+          });
     };
 
     return (
