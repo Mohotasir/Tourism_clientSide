@@ -13,8 +13,11 @@ const Spots = ({loadedSpots}) => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 mt-8'>
                 {
-                    loadedSpots.map(spot => <SingleSpot key={spot._id} spot={spot}></SingleSpot>)
+                    loadedSpots.slice(0,7).map(spot => <SingleSpot key={spot._id} spot={spot}></SingleSpot>)
                 }
+            </div>
+            <div className='my-3 text-center'>
+                <button className='btn  t-bg rounded-full w-[30%] text-white' >Explore More</button>
             </div>
 
         </div>

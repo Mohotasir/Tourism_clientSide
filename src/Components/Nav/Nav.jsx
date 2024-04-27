@@ -42,7 +42,7 @@ const Nav = () => {
     const navList = (
         <>
             <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/wishlist">Tourists Spot</NavLink></li>
+            <li><NavLink to="/tspots">Tourists Spots</NavLink></li>
             <li><NavLink to="/contact">Contact</NavLink></li>
             <li><NavLink to="/mylist">My List</NavLink></li> 
              {

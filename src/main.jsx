@@ -19,6 +19,7 @@ import AddSpot from './Components/AddTouristSpot/AddSpot.jsx';
 import PrivateRoute from './Components/privateRoute/PrivateRoute.jsx';
 import Spots from './Components/showspots/Spots.jsx';
 import FrontPage from './Components/Common/FrontPage.jsx';
+import AllTouristSpots from './Components/showspots/AllTouristSpots.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,8 +33,9 @@ const router = createBrowserRouter([
           loader:()=>fetch('http://localhost:5000/spots')
         },
         {
-          path:"/",
-          element: <Spots></Spots>
+          path:"/tspots",
+          element: <AllTouristSpots></AllTouristSpots>,
+          loader:()=>fetch('http://localhost:5000/spots')
         },
         {
           path:"/login",
