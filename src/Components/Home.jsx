@@ -36,10 +36,10 @@ const Home = () => {
         loop: 0
       })
     return (
-        <div className='h-[80vh] md:h-[75vh]   mb-3 relative '>
+        <div className='h-[80vh] md:h-[75vh]   mb-3 relative  -z-10'>
             
         <Swiper
-           className='h-[80vh] md:h-[75vh] '
+           className='h-[80vh] md:h-[75vh] -z-10'
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={0}
             slidesPerView={1}

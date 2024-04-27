@@ -5,7 +5,9 @@ import Nav from "./Nav/Nav";
 const Root = () => {
     return (
         <div className="poppin">
-            <Nav></Nav>
+            <div className="h-[89px]">
+               <Nav></Nav>
+            </div>
             <Outlet></Outlet>
         </div>
     );
