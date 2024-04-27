@@ -4,6 +4,7 @@ import Spots from '../showspots/Spots';
 import { useLoaderData } from 'react-router-dom';
 import TourType from '../TourType/TourType';
 import NewsLetter from '../NewsLetter/NewsLetter';
+import Client from '../Clientrply/Client';
 
 const FrontPage = () => {
     const loadedSpots = useLoaderData();
@@ -13,6 +14,7 @@ const FrontPage = () => {
             <TourType></TourType>
             <Spots loadedSpots={loadedSpots}></Spots>
             <NewsLetter></NewsLetter>
+            <Client></Client>
         </div>
     );
 };
