@@ -1,8 +1,9 @@
 import React from 'react';
 import { IoLocationOutline } from "react-icons/io5";
 import { IoIosGlobe } from "react-icons/io";
+import { Link } from 'react-router-dom';
 const SingleSpot = ({ spot }) => {
-    const { img, spotName, country_name, location, sd, ac, seasonality, tt, vr, name, email } = spot;
+    const { _id,img, spotName, country_name, location, sd, ac, seasonality, tt, vr, name, email } = spot;
     return (
         <div className='px-3 shadow-lg py-4'>
 
@@ -21,7 +22,7 @@ const SingleSpot = ({ spot }) => {
                     <h2 className='pb-2 text-md'>Average cost: <span className='font-semibold t-clr'> ${ac}</span></h2>
                 </div>
 
-                <button className='btn t-bg btn-sm flex-0 w-[40%] '>View Details</button>
+                <Link to={`/viewdetails/${_id}`} className='btn t-bg btn-sm flex-0 w-[40%] '>View Details</Link>
             </div>
 
         </div>

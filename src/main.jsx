@@ -20,6 +20,7 @@ import PrivateRoute from './Components/privateRoute/PrivateRoute.jsx';
 import Spots from './Components/showspots/Spots.jsx';
 import FrontPage from './Components/Common/FrontPage.jsx';
 import AllTouristSpots from './Components/showspots/AllTouristSpots.jsx';
+import ViewDetails from './Components/showspots/ViewDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
         {
           path:"/register",
           element: <Register></Register>
+        },
+        {
+          path:`/viewdetails/:id`,
+          element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
+          
         },
         {
           path:"/mylist",
