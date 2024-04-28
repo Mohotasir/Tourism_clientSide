@@ -51,7 +51,7 @@ const Home = () => {
                         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url(${slide.image})`
                     }}>
                         <div  className="text-white h-full w-full flex flex-col justify-end items-start pl-12 pb-12"  >
-                            <h1 className='text-4xl md:text-6xl t-clr font-semibold '>{text}</h1>
+                            <h1 className='text-4xl md:text-6xl  h-[70px] t-clr font-semibold '>{text}</h1>
                             <h1 className=" text-3xl md:text-5xl " data-aos="fade-right" data-aos-duration='1000'>{slide.title}</h1>
                             <p className="mt-4 mb-3"data-aos="zoom-in" data-aos-duration='1200'>{slide.description}</p>
                             <div className='flex bg-white rounded-md'>

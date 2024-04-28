@@ -21,6 +21,7 @@ import Spots from './Components/showspots/Spots.jsx';
 import FrontPage from './Components/Common/FrontPage.jsx';
 import AllTouristSpots from './Components/showspots/AllTouristSpots.jsx';
 import ViewDetails from './Components/showspots/ViewDetails.jsx';
+import UpdateSpot from './Components/UpdateSpot/UpdateSpot.jsx';
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,11 @@ const router = createBrowserRouter([
         {
           path: "/addspot",
           element: <PrivateRoute><AddSpot></AddSpot></PrivateRoute>,
+        },
+        {
+          path: "/update/:id",
+          element: <PrivateRoute><UpdateSpot></UpdateSpot> </PrivateRoute>,
+          loader:({params})=>fetch(`http://localhost:5000/spots/${params.id}`)
         }
     ]
   },

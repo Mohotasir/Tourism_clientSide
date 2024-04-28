@@ -1,5 +1,8 @@
-import swal from 'sweetalert';
-const AddSpot = () => {
+import { useLoaderData, useParams } from "react-router-dom";
+
+
+const  UpdateSpot = () => {
+    const loadedSpot = useLoaderData();
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -12,32 +15,25 @@ const AddSpot = () => {
         const seasonality = form.seasonality.value;
         const tt= form.tt.value;
         const vr = form.vr.value;
-        const name = form.name.value;
-        const email = form.email.value;
-        const formData = {img,spotName,country_name,location,sd,ac,seasonality,tt,vr,name,email}
+        const formData = {img,spotName,country_name,location,sd,ac,seasonality,tt,vr}
         console.log(formData);
-        fetch("http://localhost:5000/spots",{
-            method: 'POST',
-            headers: {
-              'content-type':'application/json'
+        const url = `http://localhost:5000/spots/${loadedSpot._id}`;
+        console.log(url)
+        fetch(url,{
+            method: 'PUT',
+            headers:{
+                'content-type' :'application/json'
             },
             body: JSON.stringify(formData)
-          })
-          .then(res=> res.json())
-          .then(data =>{
-            console.log(data)
-            if(data.insertedId){
-                swal({
-                    title: "Successfull !",
-                    text: "Added data successfully",
-                    icon: "success",
-                    button: "Ok",
-                  });
+        })
+         .then(res => res.json())
+         .then(data=>{console.log(data)
+            if(data.modifiedCount>0){
+                swal("Success!", "Data updated succesfully!", "success");
             }
-            form.reset();
-          });
+        })
     };
-
+    const {img,spotName,country_name,location,sd,ac,seasonality,tt,vr} = loadedSpot;
     return (
         <div className="l-bg py-12">
             <form onSubmit={handleSubmit} className="border  bg-white p-8 md:w-[80%]  mx-auto shadow-md rounded-md ">
@@ -48,6 +44,7 @@ const AddSpot = () => {
                             type="text"
                             id="image"
                             name="image"
+                            defaultValue={img}
                             placeholder="image  URL here.."
                             className=" w-full rounded border outline-none px-3 py-2 "
                             required
@@ -58,6 +55,7 @@ const AddSpot = () => {
                         <input
                             type="text"
                             id="tourists_spot_name"
+                            defaultValue={spotName}
                             name="tourists_spot_name"
                             className=" w-full rounded border outline-none px-3 py-2 "
                             placeholder="Tourist spot name.."
@@ -70,6 +68,7 @@ const AddSpot = () => {
                             type="text"
                             id="country_name"
                             name="country_name"
+                            defaultValue={country_name}
                             className="block w-full rounded border outline-none px-3 py-2 "
                             placeholder="country name"
                             required
@@ -81,6 +80,7 @@ const AddSpot = () => {
                             type="text"
                             id="location"
                             name="location"
+                            defaultValue={location}
                             className="block w-full rounded border outline-none px-3 py-2 "
                             placeholder="Location.."
                             required
@@ -92,6 +92,7 @@ const AddSpot = () => {
                             type="text"
                             id="sd"
                             name="sd"
+                            defaultValue={sd}
                             className="block w-full rounded border outline-none px-3 py-2 "
                             placeholder="short description..."
                             required
@@ -102,6 +103,7 @@ const AddSpot = () => {
                         <input
                             type="text"
                             id="ac"
+                            defaultValue={ac}
                             name="ac"
                             className="block w-full rounded border outline-none px-3 py-2 "
                             placeholder="average cost..."
@@ -112,6 +114,7 @@ const AddSpot = () => {
                         <label htmlFor="seasonality" className="block font-semibold">Seasonality</label>
                         <select
                             id="seasonality"
+                            defaultValue={seasonality}
                             name="seasonality"
                             className="block w-full rounded border outline-none px-3 py-2 "
                             required
@@ -128,6 +131,7 @@ const AddSpot = () => {
                         <input
                             type="text"
                             id="tt"
+                            defaultValue={tt}
                             name="tt"
                             className="block w-full rounded border outline-none px-3 py-2 "
                             placeholder="travel times..(days)"
@@ -140,42 +144,20 @@ const AddSpot = () => {
                             type="text"
                             id="vr"
                             name="vr"
+                            defaultValue={vr}
                             className="block w-full rounded border outline-none px-3 py-2 "
                             placeholder="visitors per years.."
                             required
                         />
                     </div>
-                    <div>
-                        <label htmlFor="name" className="block font-semibold">User Name</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            className="block w-full rounded border outline-none px-3 py-2 "
-                            placeholder="user name.."
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="email" className="block font-semibold">User Email</label>
-                        <input
-                            type="text"
-                            id="email"
-                            name="email"
-                            className="block w-full rounded border outline-none px-3 py-2 "
-                            placeholder="user email.."
-                            required
-                        />
-                    </div>
-
                 </div>
 
                 <div className="my-3 text-center">
-                    <button type="submit" className="t-bg text-white py-2 rounded hover:bg-green-600 transition duration-300 px-8">Add</button>
+                    <button type="submit" className="t-bg text-white py-2 rounded hover:bg-green-600 transition duration-300 px-8">Update</button>
                 </div>
             </form>
         </div>
     );
 };
 
-export default AddSpot;
+export default UpdateSpot ;
