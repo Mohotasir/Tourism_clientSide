@@ -6,17 +6,22 @@ import TourType from '../TourType/TourType';
 import NewsLetter from '../NewsLetter/NewsLetter';
 import Client from '../Clientrply/Client';
 import ShowCountries from '../AddCountry/ShowCountries';
-
+import  { useContext } from 'react';
+import { ThemeContext } from '../ThemeSwithcher/ThemeContext';
 const FrontPage = () => {
   const loadedSpots = useLoaderData();
+  const { theme } = useContext(ThemeContext);
     return (
         <div className=''>
-            <Home></Home>
+           <Home></Home>
+            <div className={`${theme === 'light' ? 'light-theme' : 'dark-theme' } poppin`}>
+            
             <TourType></TourType>
             <ShowCountries></ShowCountries>
             <Spots loadedSpots={loadedSpots}></Spots>
             <NewsLetter></NewsLetter>
             <Client></Client>
+            </div>
         </div>
     );
 };

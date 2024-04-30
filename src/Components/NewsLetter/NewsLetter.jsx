@@ -7,7 +7,7 @@ const NewsLetter = () => {
                <div className='md:w-1/2 t-bg p-6'>
                <img className=''  src={img} alt="" />
                </div>
-                <div className='md:w-1/2 '>
+                <div className='md:w-1/2 text-black '>
                     <h1 className='text-3xl md:text-5xl font-semibold'>OF YOUR FIRST TRIP</h1>
                     <p className='my-2 md:my-6 tex-lg'>Don’t Wanna Miss Somethings? Subscribe Right Now & Get The Special Discount & Monthly Newsletter.</p>
                     <div className='flex  rounded-md'>

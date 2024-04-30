@@ -1,10 +1,13 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import { useTypewriter } from 'react-simple-typewriter'
+import { useTypewriter } from 'react-simple-typewriter';
+import { useContext } from 'react';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css';
+import { ThemeContext } from './ThemeSwithcher/ThemeContext';
+
 
 
 const data = [
@@ -31,12 +34,14 @@ const data = [
 ]
 
 const Home = () => {
+    const { theme } = useContext(ThemeContext);
     const [text] = useTypewriter({
         words: ['BANGLADESH', 'THAILAND', 'MALAYSIA', 'VIETNAM','CAMBODIA'],
         loop: 0
       })
+     
     return (
-        <div className='h-[80vh] md:h-[75vh]   mb-3 relative  -z-10'>
+        <div className={`${theme === 'light' ? 'light-theme' : 'dark-theme' }  h-[80vh] md:h-[75vh]   mb-3 relative  -z-1`}>
             
         <Swiper
            className='h-[80vh] md:h-[75vh] -z-10'
@@ -54,10 +59,7 @@ const Home = () => {
                             <h1 className='text-4xl md:text-6xl  h-[70px] t-clr font-semibold '>{text}</h1>
                             <h1 className=" text-3xl md:text-5xl " data-aos="fade-right" data-aos-duration='1000'>{slide.title}</h1>
                             <p className="mt-4 mb-3"data-aos="zoom-in" data-aos-duration='1200'>{slide.description}</p>
-                            <div className='flex bg-white rounded-md'>
-                            <input className='px-2  py-2 rounded-md border-none outline-none' type="text" name="name" id="" placeholder='Counrtry Name..' />
-                            <button className='btn Z-10 t-bg'>search</button>
-                            </div>
+                            
                         </div>
                     </SwiperSlide>
 

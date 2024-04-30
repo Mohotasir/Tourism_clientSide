@@ -14,7 +14,7 @@ const Client = () => {
     ];
 
     return (
-        <div className="container mx-auto my-12 ">
+        <div className="container mx-auto mt-12 ">
             <div>
                 <h1 className='text-2xl font-semibold '>Our Client </h1>
                 <h1 className='text-3xl font-semibold t-clr '> Reviews</h1>

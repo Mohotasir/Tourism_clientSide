@@ -34,3 +34,10 @@
 .t-bg{
   background-color: #00ED64;
 }
+.dark-theme{
+  background-color: rgb(8, 3, 34);
+  color: white;
+}
+.light-theme{
+  background-color: white;
+}

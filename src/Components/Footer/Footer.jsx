@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../ThemeSwithcher/ThemeContext';
 
 const Footer = () => {
+    const { theme } = useContext(ThemeContext);
     return (
-        <div>
-            <footer className="footer bg-green-100 p-10  text-base-content">
+        <div  className={`${theme === 'light' ? 'bg-green-100' : 'dark-theme' } `}>
+            <footer className={` footer  p-10  `}>
                 <nav>
                     <h6 className="footer-title text-xl t-clr">Tour</h6>
                     <a className="link link-hover">Advanture</a>
@@ -40,11 +42,11 @@ const Footer = () => {
                 </form>
 
             </footer>
-            <footer className="footer flex justify-between items-center flex-col md:flex-row t-clr px-10 pb-3 bg-green-100 text-neutral-content">
+            <footer className="footer flex justify-between items-center flex-col md:flex-row  px-10 pb-3 ">
                
                     <div>
-                    <p className='text-3xl font-bold'><span className='text-black'>Tour</span>ifY.</p>
-                    <p className='text-black'> All right reserved by TourifY Group.</p>
+                    <p className='text-3xl font-bold'><span className=''>Tour</span><span className='t-clr'>ifY.</span></p>
+                    <p className=''> All right reserved by TourifY Group.</p>
                     </div>
                 
                 <nav className='flex'>

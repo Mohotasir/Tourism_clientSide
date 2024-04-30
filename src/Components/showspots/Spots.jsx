@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import SingleSpot from './SingleSpot';
+import { ThemeContext } from '../ThemeSwithcher/ThemeContext';
 
 const Spots = ({loadedSpots}) => {
-    
+    const { theme } = useContext(ThemeContext);
 
     return (
-        <div className='my-8 md:my-24 container mx-auto'>
+        <div  className={`${theme === 'light' ? 'light-theme' : 'dark-theme' } py-8 md:pb-24 md:pt-12 container mx-auto `}>
             <div>
                 <h1 className='text-2xl font-semibold '>Choice Your Interested </h1>
                 <h1 className='text-3xl font-semibold t-clr '> Spots</h1>

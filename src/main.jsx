@@ -23,6 +23,8 @@ import AllTouristSpots from './Components/showspots/AllTouristSpots.jsx';
 import ViewDetails from './Components/showspots/ViewDetails.jsx';
 import UpdateSpot from './Components/UpdateSpot/UpdateSpot.jsx';
 import AddCountry from './Components/AddCountry/AddCountry.jsx';
+import ShowCntrySpot from './Components/AddCountry/ShowCntrySpot.jsx';
+import { ThemeProvider } from './Components/ThemeSwithcher/ThemeContext.jsx';
 
 const router = createBrowserRouter([
   {
@@ -70,6 +72,10 @@ const router = createBrowserRouter([
         {
           path:"/country",
           element: <PrivateRoute> <AddCountry></AddCountry> </PrivateRoute>
+        },
+        {
+          path:"/showspot",
+          element: <ShowCntrySpot></ShowCntrySpot>
         }
     ]
   },
@@ -78,7 +84,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
    <AuthProvider>
-         <RouterProvider router={router} />
+        <ThemeProvider>
+             <RouterProvider router={router} />
+        </ThemeProvider>
    </AuthProvider>
   </React.StrictMode>,
 )
