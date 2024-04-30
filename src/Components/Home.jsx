@@ -41,10 +41,10 @@ const Home = () => {
       })
      
     return (
-        <div className={`${theme === 'light' ? 'light-theme' : 'dark-theme' }  h-[80vh] md:h-[75vh]   mb-3 relative  -z-1`}>
+        <div className={`  h-[80vh] md:h-[75vh]   mb-3 relative `}>
             
         <Swiper
-           className='h-[80vh] md:h-[75vh] -z-10'
+           className='h-[80vh] md:h-[75vh]'
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={0}
             slidesPerView={1}
@@ -53,7 +53,7 @@ const Home = () => {
             {
                 data.map((slide,index) =>
                     <SwiperSlide key={index} className=" bg-cover bg-center" style={{
-                        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url(${slide.image})`
+                        backgroundImage: `${theme === 'light' ? `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url(${slide.image})` : `linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, 1)), url(${slide.image})` }`
                     }}>
                         <div  className="text-white h-full w-full flex flex-col justify-end items-start pl-12 pb-12"  >
                             <h1 className='text-4xl md:text-6xl  h-[70px] t-clr font-semibold '>{text}</h1>

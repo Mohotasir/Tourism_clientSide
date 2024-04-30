@@ -74,7 +74,7 @@ const router = createBrowserRouter([
           element: <PrivateRoute> <AddCountry></AddCountry> </PrivateRoute>
         },
         {
-          path:"/showspot",
+          path:"/showspot/:country",
           element: <ShowCntrySpot></ShowCntrySpot>
         }
     ]

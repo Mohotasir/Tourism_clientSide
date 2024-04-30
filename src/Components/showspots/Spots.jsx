@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import SingleSpot from './SingleSpot';
 import { ThemeContext } from '../ThemeSwithcher/ThemeContext';
+import { Link } from 'react-router-dom';
 
 const Spots = ({loadedSpots}) => {
     const { theme } = useContext(ThemeContext);
@@ -18,7 +19,7 @@ const Spots = ({loadedSpots}) => {
                 }
             </div>
             <div className='my-3 text-center'>
-                <button className='btn  t-bg rounded-full w-[30%] text-white' >Explore More</button>
+                <Link  to="/tspots" className='btn  t-bg rounded-full w-[30%] text-white' >Explore More</Link>
             </div>
 
         </div>

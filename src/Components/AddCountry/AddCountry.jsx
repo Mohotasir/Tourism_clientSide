@@ -33,7 +33,7 @@ const AddCountry = () => {
     };
 
     return (
-        <div className="l-bg py-12">
+        <div className=" py-12">
             <form onSubmit={handleSubmit} className="border  bg-white p-8 md:w-[80%]  mx-auto shadow-md rounded-md ">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>

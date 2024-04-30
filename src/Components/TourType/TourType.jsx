@@ -5,7 +5,7 @@ import p4 from '../../assets/p4.svg'
 
 const TourType = () => {
     return (
-        <div className='flex flex-col md:flex-row justify-around bg-white shadow-lg rounded-lg md:w-[80%] mx-auto px-3 py-8 -mt-8  z-10'>
+        <div className='flex text-black flex-col md:flex-row justify-around bg-white shadow-lg rounded-lg md:w-[80%] mx-auto px-3 py-8  z-100'>
             <div>
                 <img  src={p1} alt="" />
                 <div className='py-2'>
