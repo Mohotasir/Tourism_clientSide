@@ -5,13 +5,15 @@ import { useLoaderData } from 'react-router-dom';
 import TourType from '../TourType/TourType';
 import NewsLetter from '../NewsLetter/NewsLetter';
 import Client from '../Clientrply/Client';
+import ShowCountries from '../AddCountry/ShowCountries';
 
 const FrontPage = () => {
-    const loadedSpots = useLoaderData();
+  const loadedSpots = useLoaderData();
     return (
         <div className=''>
             <Home></Home>
             <TourType></TourType>
+            <ShowCountries></ShowCountries>
             <Spots loadedSpots={loadedSpots}></Spots>
             <NewsLetter></NewsLetter>
             <Client></Client>

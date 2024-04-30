@@ -9,7 +9,7 @@ const MyList = () => {
     const [spot, setSpot] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/spots?email=${email}`)
+        fetch(`https://tourism-server-9iypyqckm-tahsins-projects-aaa37910.vercel.app/spots?email=${email}`)
             .then(res => res.json())
             .then(data => {
                 const userSpots = data.filter(spot => spot.email === email);
@@ -26,7 +26,7 @@ const MyList = () => {
             dangerMode: true,
         });
         if (willDelete) {
-            fetch(`http://localhost:5000/spots/${_id}`, {
+            fetch(`https://tourism-server-9iypyqckm-tahsins-projects-aaa37910.vercel.app/spots/${_id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

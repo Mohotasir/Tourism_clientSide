@@ -17,7 +17,7 @@ const  UpdateSpot = () => {
         const vr = form.vr.value;
         const formData = {img,spotName,country_name,location,sd,ac,seasonality,tt,vr}
         console.log(formData);
-        const url = `http://localhost:5000/spots/${loadedSpot._id}`;
+        const url = `https://tourism-server-9iypyqckm-tahsins-projects-aaa37910.vercel.app/spots/${loadedSpot._id}`;
         console.log(url)
         fetch(url,{
             method: 'PUT',
@@ -161,3 +161,5 @@ const  UpdateSpot = () => {
 };
 
 export default UpdateSpot ;
+
+//"methods" : ["GET","POST","PUT","PATCH","DELETE","OPTIONS"]

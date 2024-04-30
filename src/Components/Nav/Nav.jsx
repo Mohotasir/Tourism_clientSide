@@ -47,6 +47,7 @@ const Nav = () => {
             <li><NavLink to="/mylist">My List</NavLink></li> 
              {
                 user &&<> <li><NavLink to="/addspot">Add tourist spot</NavLink></li>
+                        <li><NavLink to="/country">Add Country</NavLink></li>
                         </>
              }
    

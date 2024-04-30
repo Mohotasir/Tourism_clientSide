@@ -22,6 +22,7 @@ import FrontPage from './Components/Common/FrontPage.jsx';
 import AllTouristSpots from './Components/showspots/AllTouristSpots.jsx';
 import ViewDetails from './Components/showspots/ViewDetails.jsx';
 import UpdateSpot from './Components/UpdateSpot/UpdateSpot.jsx';
+import AddCountry from './Components/AddCountry/AddCountry.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,12 +33,13 @@ const router = createBrowserRouter([
         {
           path:"/",
           element: <FrontPage></FrontPage>,
-          loader:()=>fetch('http://localhost:5000/spots')
+          loader:()=>fetch('https://tourism-server-9iypyqckm-tahsins-projects-aaa37910.vercel.app/spots'),
+          //loader: ()=>fetch('http://localhost:5000/country')
         },
         {
           path:"/tspots",
           element: <AllTouristSpots></AllTouristSpots>,
-          loader:()=>fetch('http://localhost:5000/spots')
+          loader:()=>fetch('https://tourism-server-9iypyqckm-tahsins-projects-aaa37910.vercel.app/spots')
         },
         {
           path:"/login",
@@ -63,7 +65,11 @@ const router = createBrowserRouter([
         {
           path: "/update/:id",
           element: <PrivateRoute><UpdateSpot></UpdateSpot> </PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/spots/${params.id}`)
+          loader:({params})=>fetch(`https://tourism-server-9iypyqckm-tahsins-projects-aaa37910.vercel.app/spots/${params.id}`)
+        },
+        {
+          path:"/country",
+          element: <PrivateRoute> <AddCountry></AddCountry> </PrivateRoute>
         }
     ]
   },

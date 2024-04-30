@@ -9,7 +9,7 @@ const ViewDetails = () => {
     console.log(id)
     const [spot, setSpot] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/spots/${id}`)
+        fetch(`https://tourism-server-9iypyqckm-tahsins-projects-aaa37910.vercel.app/spots/${id}`)
             .then(res => res.json())
             .then(data => setSpot(data))
 

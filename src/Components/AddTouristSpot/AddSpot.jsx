@@ -16,7 +16,7 @@ const AddSpot = () => {
         const email = form.email.value;
         const formData = {img,spotName,country_name,location,sd,ac,seasonality,tt,vr,name,email}
         console.log(formData);
-        fetch("http://localhost:5000/spots",{
+        fetch("https://tourism-server-9iypyqckm-tahsins-projects-aaa37910.vercel.app/spots",{
             method: 'POST',
             headers: {
               'content-type':'application/json'

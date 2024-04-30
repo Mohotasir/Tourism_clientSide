@@ -55,7 +55,7 @@ const Home = () => {
                             <h1 className=" text-3xl md:text-5xl " data-aos="fade-right" data-aos-duration='1000'>{slide.title}</h1>
                             <p className="mt-4 mb-3"data-aos="zoom-in" data-aos-duration='1200'>{slide.description}</p>
                             <div className='flex bg-white rounded-md'>
-                            <input className='px-2  py-2 rounded-md border-none outline-none' type="text" name="name" id="" placeholder='Enter Counrtry Name..' />
+                            <input className='px-2  py-2 rounded-md border-none outline-none' type="text" name="name" id="" placeholder='Counrtry Name..' />
                             <button className='btn Z-10 t-bg'>search</button>
                             </div>
                         </div>
