@@ -12,8 +12,8 @@ Live Site URL: https://tourism-3cbc5.web.app
 
 ## Tech Stack
 
-**Client:** React, TailwindCSS, HTML5, DaisyUI ,CSS3 ,
-**Server:** Node, Express, MongoDB
+**Client:** React, TailwindCSS, HTML5, DaisyUI ,CSS3   ||  
+**Server:** Node, Express, MongoDB  ||
 **Tools:** npm, Firebase, 
 
 
