@@ -3,11 +3,53 @@ Website Name: Tourify
 -----------------------------------------------
 Live Site URL: https://tourism-3cbc5.web.app
 --------------------------------------------
-* Explore Southeast Asia: Dive into the diverse and enchanting destinations of Southeast Asia, from the tranquil beaches of Thailand to the ancient temples of Cambodia.
-* Interactive Tourist Spot Cards: Discover iconic tourist spots with detailed information, including images, descriptions, average costs, and seasonal highlights.
-* User Authentication: Securely log in or register with password and email-based authentication, or use social media logins for added convenience.
-* Dynamic Sorting: Explore tourist spots with ease by utilizing the dynamic sorting functionality, allowing users to sort spots based on average cost in ascending or descending order.
-* Responsive Design: Enjoy seamless browsing on any device, with a responsive layout optimized for desktops, tablets, and mobile phones.
+## Features: 
+1. Interactive Tourist Cards: Access detailed information on tourist spots, including images, descriptions, costs, and seasonal highlights.
+2. Secure User Authentication: Register and log in securely with email or social media for a convenient experience.
+3. Dynamic Cost Sorting: Sort tourist spots by average cost, either ascending or descending, for efficient planning.
+4. Responsive Design: Enjoy an optimized browsing experience across desktops, tablets, and mobile devices.
 
-Category: Southeast Asia Tourism Management
---------------------------------------------------
+
+## Tech Stack
+
+**Client:** React, TailwindCSS, HTML5, DaisyUI ,CSS3 ,
+**Server:** Node, Express, MongoDB
+**Tools:** npm, Firebase, 
+
+
+    
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://link-to-project
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm start
+```
+
+
+
+
+To run frontend in the local browser, run the following command
+
+```bash
+  npm run dev
+```
+
